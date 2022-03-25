@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<link href="style.css" rel="stylesheet" />-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burtu spēle</title>
+  <link rel='stylesheet' href='/static/stils.css'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <a href="index.html">
+                <h1>Burtu spēle</h1>
+            </a>
+            
+            <ul>
+                <li>
+                    <a href="speele">
+                    Burtu spēle
+                </a>
+                </li>
+                <li>
+                    <a href="noteikumi">
+                    Noteikumi
+
+                </a>
+                </li>
+                <li>
+                    <a href="rezultaati">
+                    Rezultāti
+                     </a>
+                </li>
+                <li>
+                    <a href="veidotaaji">
+                    Veidotāji
+                     </a>
+                </li>
+
+            </ul>
+        </div>
+       <!--
+        < !--<span> </span><div class="content">
+            <h3 class="virsraksts">Sveiks</h3>
+            Ievadiet vārdu:<input id="vaards2"/>
+            <br/>
+        </div>
+    </div></span>-- >
+      -->
+
+<div class="content">
+            
+            
+ 
+    </div>
+            <div class="speele" id="speele">
+                <div class="content">
+                    <h1>Uzmini vārdu</h1>
+                   <h3 class="virsraksts2">Ievadiet burtu skaitu vārdā</h3>
+            
+            Burtu skaits:
+            <select id="skaits">
+                <option value="5"> 5</option>
+                <option value="6"> 6</option>
+                <option value="7"> 7</option>
+                <option value="8"> 8</option>
+            </select>
+            <br/>
+                   <button id="genereet">Ģenerēt vārdu</button>
+
+                  <div id="speele"></div>
+                  <div id="out"> Vārds:</div>  
+                               
+                <h5 class="no"></h4>
+                    <h3 class="zinojums"></h3>
+                  
+                    <input type="text" class="hidden" id="atbilde" placeholder="Ievadi atbildi"><br>
+<button onclick='paarbaudiit()'>Pārbaudīt</button>  
+                    <div class="punkti"><label id='punkti'><b>Punkti:</b></label></div>
+                    <div class="laiks"><label id='laiks'><b>Laiks:<div id="some_div">
+                    
+                    </div>
+                    <div id= "countdown"></div>
+                
+  
+              </div></div> </b></label></div>
+                    <div id="some_div">
+                    </div>
+
+
+
+
+
+     
+
+    <script>
+       /* 
+        function vaarda_ievade()
+        {
+            let vaards2=document.querySelector('#vaards2').value
+            console.log(vaards2)
+            if(vaards=='')
+            {
+                alert('Ievadi vārdu!')
+            }
+            else{
+                window.location='speele.html#'+vaards
+            }
+            if(burti=='')
+            {
+                alert('Ievadi burtu skaitu!')
+            }
+            else{
+                do {
+                      i += 1;
+                      console.log(i);
+                      } 
+                while (i < burti);
+                window.location='speele.html#'+vaards
+            }
+        }//beidzās saaktSpeeli
+   //document.querySelector('.virsraksts').innerHTML='Vārds:'+vaards+','+vecums+','+regions //konkrēta cilvēka ieraksts
+    var pieci=['kaķis','skola','ciems','bilde','lapsa','lācis','vilks', 'putns', 'glāze', 'krūze', 'torte']
+    var sesi=['lakats','vāvere','rinkis','vasara','priede','kafija','ķirbis', 'durvis']
+    var septini=['pilsēta','plaukts','numurs','burkāni','lineāls','ārzemes','grāmata']
+    var astoni=['pulveris','aploksne','rokturis','austiņas','kabinets','tālrunis','traktors']
+    var rand5=Math.floor(Math.random()*((pieci.length -1)+1))
+    var arr5=str.split('')
+    var rand6=Math.floor(Math.random()*((sesi.length -1)+1))
+    var arr5=str.split('')
+    var rand7=Math.floor(Math.random()*((septini.length -1)+1))
+    var arr5=str.split('')
+    var rand8=Math.floor(Math.random()*((astoni.length -1)+1))
+    
+      document.querySelector('.out').innerHTML=pieci[1]
+       */
+    </script>
+     
+</body>
+  <!--<script src="static/saraksts.js"></script>-->
+  <script src="static/speele.js" defer></script>
+</html>

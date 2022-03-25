@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burtu spēle</title>
+  <link rel='stylesheet' href='/static/stils.css'>
+</head>
+<body>
+ <div class="wrapper">
+        <div class="header">
+            <a href="index.html">
+                <h1>Burtu spēle</h1>
+            </a>
+            
+            <ul>
+                <li>
+                    <a href="speele">
+                    Burtu spēle
+                </a>
+                </li>
+                <li>
+                    <a href="noteikumi">
+                    Noteikumi
+
+                </a>
+                </li>
+                <li>
+                    <a href="rezultaati">
+                    Rezultāti
+                     </a>
+                </li>
+                <li>
+                    <a href="veidotaaji">
+                    Veidotāji
+                     </a>
+                </li>
+
+            </ul>
+        </div>
+       
+        <div class="content">
+            <h3 class="virsraksts">Spēlētais</h3>
+            Vārds:<input id="vaards"/>
+            <br/>
+            Vecums:<input id="vecums"/>
+            <br/>
+            Reģions:
+            <select id="regions">
+                <option value="Vidzeme"> Vidzeme</option>
+                <option value="Latgale"> Latgale</option>
+                <option value="Zemgale"> Zemgale</option>
+                <option value="Kurzeme"> Kurzeme</option>
+            </select>
+            <br/>
+
+           
+                                      
+            <button onclick="saaktSpeeli()">Sākt spēli</button>
+        </div>
+    </div><!--beidzās wrapper-->
+  
+</body>
+  <script src="static/speele.js"></script>
+</html>
