@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 
 app = Flask('app')
 app.config["JSON_AS_ASCII"] = False
@@ -26,6 +26,35 @@ def veidotaaji():
     return render_template("veidotaaji.html")
 
 
+@app.route('/rezultaati')
+def rezultaati():
+    return render_template("rezultaati.html")
+
+
+@app.route('/demo')
+def demo():
+    return render_template("demo.html")
+
+  
+
+@app.route('/demoPoga', methods=['POST', 'GET'])
+def demoPoga():
+  if request.method=="GET":
+    with open("dati.txt","r", encoding="utf-8") as f:
+      dati=f.read()
+    return dati
+  elif request.method=="POST":
+    ievade=request.json
+
+    with open("dati.txt","a",encoding="utf-8") as f:
+      f.write(f"{ievade['datiY']}\n")
+   
+    return "Ok"
+  else:
+    return "Kā tu te tiki?"
+
+
+
 @app.route('/top/labaakais')
 def labaakais():
   with open('dati/labaakais', 'r', encoding='utf-8') as f:
@@ -51,6 +80,8 @@ def top_rezultaati():
   with open('static/dati/top.json', 'r', encoding='utf-8') as f:
     dati=json.loads(f.read())
   return jsonify(dati)
+
+
 
 '''@app.route('/speeles/<speele>')
 def speeles(speele):

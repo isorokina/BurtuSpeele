@@ -17,6 +17,17 @@
 
 
 //vaardu masiivs
+let adrese=window.location.hash
+adrese=decodeURI(adrese)
+adrese=adrese.replace("#","")
+adrese=adrese.split(",")
+let niks=adrese(0)
+
+let ienakosais="";
+document.querySelector(".virsraksts").innerHTML=vaards+" - veiksmi!"
+console.log(adrese)
+
+
 let vaards = "";
 let pieci=['kaķis','skola','ciems','bilde','lapsa','lācis','vilks', 'putns', 'glāze', 'krūze', 'torte']
 let sesi=['lakats','vāvere','rinkis','vasara','priede','kafija','ķirbis', 'durvis']
@@ -90,8 +101,65 @@ function paarbaudiit(){
     let atbilde = document.getElementById('atbilde').value;
     if(atbilde === vaards){
         alert('Apsveicu pareizi!');
+      if (vaards==pieci){
+        punkti=punkti+5;
+      }
+      if (vaards==sesi){
+        punkti=punkti+6;
+      }
+      if (vaards==septini){
+        punkti=punkti+7;
+      }
+      if (vaards==astoni){
+        punkti=punkti+8;
+      }
+      if (vaards==devini){
+        punkti=punkti+9;
+      }
         genereet();
     }else{
         alert('Mēģini vēlreiz');
     }
 }
+
+
+document.getElementById('poga').addEventListener('click',()=>{
+ let ievade = document.getElementById('ievade');
+ let ievadeText = ievade.value;
+  ievade.value="";
+
+  let datiJson={'datiY':ievadeText};
+  console.log(datiJson)
+  suutiitDatus(datiJson);
+});
+
+async function suutiitDatus(dati) {
+  let atbilde=await fetch('/demoPoga',{
+  method: "POST",
+    headers: {
+    'Content-Type':'application/json'
+    },
+    body: JSON.stringify(dati)
+  })
+
+let data=await atbilde.text();
+//if data!="Ok":
+//  alert("Pievienoana neveiksmga");
+sanemtDatus()
+  
+}
+async function sanemtDatus(dati) {
+  let atbilde=await fetch('/demoPoga');
+  let data=await atbilde.text();
+  let divData=document.getElementById('data')
+  divData.innerHTML=data;
+}
+
+
+
+
+// текущая дата
+let date = new Date();
+
+// час в вашем текущем часовом поясе
+alert( date.getHours() );
